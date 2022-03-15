@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-k8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-k8s
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0    
+  template:
+    metadata:
+      labels:
+        app: go-k8s
+    spec:
+      containers:
+      - name: go-k8s
+        image: "bhaghireddy/go-k8s:0.1.0"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+        resources:
+          limits:
+            cpu: 100m
+            memory: 130Mi
+          requests:
+            cpu: 100m
+            memory: 130Mi
