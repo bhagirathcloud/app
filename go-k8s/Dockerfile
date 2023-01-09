@@ -1,4 +1,4 @@
-FROM gcr.io/bitnami-containers/minideb-extras:jessie-r14
+FROM bitnami/minideb-extras:jessie
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
