@@ -1,4 +1,4 @@
-FROM bitnami/minideb-extras:jessie
+FROM ryotakatsuki/minideb-extras:jessie-r87
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
