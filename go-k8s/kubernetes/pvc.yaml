@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: go-k8s-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: aws-ebs
+  resources:
+    requests:
+      storage: 8Gi

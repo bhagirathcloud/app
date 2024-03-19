@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: go-k8s-config
+data:
+  app.properties: |
+    key1=value1
+    key2=value2
+
